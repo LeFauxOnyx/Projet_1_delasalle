@@ -1,0 +1,55 @@
+site_name: Sécurité hardware par accès physique
+site_description: Catalogue et démonstrations de failles hardware sur poste de travail — Projet BSI
+
+theme:
+  name: material
+  language: fr
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en clair
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Passer en sombre
+  features:
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Accueil: index.md
+  - Contexte: 00-contexte.md
+  - Catalogue: 01-catalogue.md
+  - Attaques:
+      - Sniffing TPM / BitLocker: attaques/tpm-sniffing.md
+      - Accès disque direct: attaques/acces-disque.md
+      - Cold boot: attaques/cold-boot.md
+      - Attaque DMA: attaques/dma.md
+      - Reset BIOS: attaques/reset-bios.md
+      - BadUSB: attaques/badusb.md
+      - Keylogger matériel: attaques/keylogger-materiel.md
+  - Durcissement: durcissement.md
+  - Lab: lab/README.md
